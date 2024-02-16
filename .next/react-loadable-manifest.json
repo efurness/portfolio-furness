@@ -1,0 +1,38 @@
+{
+  "../src/layout/Layout.js -> ../components/About": {
+    "id": "../src/layout/Layout.js -> ../components/About",
+    "files": [
+      "static/chunks/src_components_About_js.js"
+    ]
+  },
+  "../src/layout/Layout.js -> ../components/PortfolioIsotope": {
+    "id": "../src/layout/Layout.js -> ../components/PortfolioIsotope",
+    "files": [
+      "static/chunks/src_components_PortfolioIsotope_js.js"
+    ]
+  },
+  "_app.js -> ../src/layout/WatsonHead": {
+    "id": "_app.js -> ../src/layout/WatsonHead",
+    "files": [
+      "static/chunks/src_layout_WatsonHead_js.js"
+    ]
+  },
+  "index-dark-slider.js -> ../src/layout/Layout": {
+    "id": "index-dark-slider.js -> ../src/layout/Layout",
+    "files": [
+      "static/chunks/src_layout_Layout_js.js"
+    ]
+  },
+  "index-dark.js -> ../src/components/BannerContent": {
+    "id": "index-dark.js -> ../src/components/BannerContent",
+    "files": [
+      "static/chunks/src_components_BannerContent_js.js"
+    ]
+  },
+  "index-dark.js -> ../src/layout/Layout": {
+    "id": "index-dark.js -> ../src/layout/Layout",
+    "files": [
+      "static/chunks/src_layout_Layout_js.js"
+    ]
+  }
+}
