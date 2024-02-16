@@ -19,8 +19,8 @@ const BlogDetails = () => {
             {/*Blog Content Start*/}
             <div className="blog-content col-md-10 offset-md-1">
               
-            <p><h4>
-                Please come back every week to see new maps!</h4>
+            <p>
+                Please come back every week to see new maps!
               </p>
 
               <blockquote>

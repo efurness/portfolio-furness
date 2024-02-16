@@ -1,169 +1,44 @@
-import { Fragment, useEffect } from "react";
-const Index = () => {
+import dynamic from "next/dynamic";
+import { useContext, useEffect } from "react";
+import BannerContent from "../src/components/BannerContent";
+
+import { WatsonContext } from "../src/context/Context";
+import { defaultPageAnimationByPageName } from "../src/utils";
+const Layout = dynamic(() => import("../src/layout/Layout"), {
+  ssr: false,
+});
+
+const IndexDarkYoutubeVideo = () => {
   useEffect(() => {
-    document.querySelector("body").classList.add("demo-main");
+    let { jarallax, jarallaxVideo } = require("jarallax");
+    jarallaxVideo();
+    jarallax(document.querySelectorAll("#video-container"), {
+      speed: 0.5,
+      keepImg: true,
+      automaticResize: true,
+      videoVolume: 0,
+    });
   }, []);
 
+  const { pageAnimationChange } = useContext(WatsonContext);
+  useEffect(() => {
+    pageAnimationChange(defaultPageAnimationByPageName.indexDarkYoutubeVideo);
+  }, []);
   return (
-    <Fragment>
-      <header className="demo-banner">
-        <div className="container">
-          <div className="row text-center">
-            <div className="col-md-12 heading">
-              <h1>Furness</h1>
-              <p>VCard, CV, Resume, Portfolio Template</p>
-              <div className="buy-link">
-                <a href="#" target="_blank">
-                  
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-      <div className="demos">
-        <div className="container">
-          <div className="row dark-version">
-            <div className="col-md-12">
-              <div className="subheading">
-                <h3>Dark Version</h3>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <a className="demo-link" href="index-dark" target="_blank">
-                <figure>
-                  <img src="img/demo/index-dark.jpg" alt="" />
-                </figure>
-                <h4>Static Image</h4>
-              </a>
-            </div>
-            <div className="col-md-6">
-              <a className="demo-link" href="index-dark-slider" target="_blank">
-                <figure>
-                  <img src="img/demo/index-dark-slider.jpg" alt="" />
-                </figure>
-                <h4>Slider</h4>
-              </a>
-            </div>
-            <div className="col-md-6">
-              <a
-                className="demo-link"
-                href="index-dark-particles1"
-                target="_blank"
-              >
-                <figure>
-                  <img src="img/demo/index-dark-particles1.jpg" alt="" />
-                </figure>
-                <h4>Particles 1</h4>
-              </a>
-            </div>
-            <div className="col-md-6">
-              <a
-                className="demo-link"
-                href="index-dark-particles2"
-                target="_blank"
-              >
-                <figure>
-                  <img src="img/demo/index-dark-particles2.jpg" alt="" />
-                </figure>
-                <h4>Particles 2</h4>
-              </a>
-            </div>
-            <div className="col-md-6">
-              <a className="demo-link" href="index-dark-video" target="_blank">
-                <figure>
-                  <img src="img/demo/index-dark-video.jpg" alt="" />
-                </figure>
-                <h4>HTML5 Video</h4>
-              </a>
-            </div>
-            <div className="col-md-6">
-              <a
-                className="demo-link"
-                href="index-dark-youtube-video"
-                target="_blank"
-              >
-                <figure>
-                  <img src="img/demo/index-dark-youtube-video.jpg" alt="" />
-                </figure>
-                <h4>Youtube Video</h4>
-              </a>
-            </div>
-          </div>
-          <div className="row dark-version">
-            <div className="col-md-12">
-              <div className="subheading">
-                <h3>Light Version</h3>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <a className="demo-link" href="index-light" target="_blank">
-                <figure>
-                  <img src="img/demo/index-light.jpg" alt="" />
-                </figure>
-                <h4>Static Image</h4>
-              </a>
-            </div>
-            <div className="col-md-6">
-              <a
-                className="demo-link"
-                href="index-light-slider"
-                target="_blank"
-              >
-                <figure>
-                  <img src="img/demo/index-light-slider.jpg" alt="" />
-                </figure>
-                <h4>Slider</h4>
-              </a>
-            </div>
-            <div className="col-md-6">
-              <a
-                className="demo-link"
-                href="index-light-particles1"
-                target="_blank"
-              >
-                <figure>
-                  <img src="img/demo/index-light-particles1.jpg" alt="" />
-                </figure>
-                <h4>Particles 1</h4>
-              </a>
-            </div>
-            <div className="col-md-6">
-              <a
-                className="demo-link"
-                href="index-light-particles2"
-                target="_blank"
-              >
-                <figure>
-                  <img src="img/demo/index-light-particles2.jpg" alt="" />
-                </figure>
-                <h4>Particles 2</h4>
-              </a>
-            </div>
-            <div className="col-md-6">
-              <a className="demo-link" href="index-light-video" target="_blank">
-                <figure>
-                  <img src="img/demo/index-light-video.jpg" alt="" />
-                </figure>
-                <h4>HTML5 Video</h4>
-              </a>
-            </div>
-            <div className="col-md-6">
-              <a
-                className="demo-link"
-                href="index-light-youtube-video"
-                target="_blank"
-              >
-                <figure>
-                  <img src="img/demo/index-light-youtube-video.jpg" alt="" />
-                </figure>
-                <h4>Youtube Video</h4>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Fragment>
+    <Layout>
+      <section
+        id="home"
+        className="banner-section pt-page"
+        style={{ backgroundImage: 'url("img/background/home-bg.jpg")' }}
+      >
+        <div
+          id="video-container"
+          data-jarallax-video="https://youtu.be/spDj54kf-vY"
+        ></div>
+                <BannerContent />
+
+      </section>
+    </Layout>
   );
 };
-export default Index;
+export default IndexDarkYoutubeVideo;
