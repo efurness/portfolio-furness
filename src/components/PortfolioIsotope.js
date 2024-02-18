@@ -118,7 +118,7 @@ const PortfolioIsotope = () => {
               <figure>
                 <img src="img/portfolio/sgl.png" alt="gis image" />
                 <figcaption>
-                  <h4>Notepad Design</h4>
+                  <h4>ArcGIS Story Map</h4>
                   <p>Design</p>
                 </figcaption>
               </figure>

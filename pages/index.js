@@ -29,7 +29,7 @@ const IndexDarkYoutubeVideo = () => {
       <section
         id="home"
         className="banner-section pt-page"
-        style={{ backgroundImage: 'url("img/background/home-bg.jpg")' }}
+        style={{ backgroundImage: 'url("img/background/bigsky.png")' }}
       >
         <div
           id="video-container"
